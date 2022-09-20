@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top categories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+    <style>
+        .categoriesImages {
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .categoriesImages a{
+            box-shadow: none;
+            text-decoration: none;
+        }
+        .item-image {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #eee;
+        }
+        .item-product {
+            padding: 15px;
+        }
+        .item-image img {
+            max-width: 100%;
+        }
+        .item-image:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.25);
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .item-product-cat-content:hover .item-image:before {
+            opacity: 1;
+            visibility: visible;
+        }
+        .item-image:after {
+            content: "";
+            background-position: 50%;
+            background: url('./img/plus-cate.png') no-repeat;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 3;
+        }
+        .item-product-cat-content:hover .item-image:after{
+            opacity: 1;
+            visibility: visible;
+        }
+        .item-product-cat-content .item-image img {
+            margin: auto;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+        
+        .item-product-cat-content:hover img {
+                -webkit-animation-name: c;
+                animation-name: c;
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+        }
+        .item-product-cat-content:hover .item-title a{
+            color: #be0f34;
+        }
+        .item-title {
+            text-align: center;
+        }
+        .item-title a {
+            /* margin: 10px 0 0; */
+            font-size: 12px;
+            font-family: Poppins,sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #000;
+        }
+        .item-title a:hover {
+            color: #be0f34;
+            outline: unset;
+        }
+        @keyframes c {
+            16.65% {
+                -webkit-transform: rotate(15deg);
+                transform: rotate(15deg)
+            }
+            33.33% {
+                -webkit-transform: rotate(-13deg);
+                transform: rotate(-13deg)
+            }
+            49.95% {
+                -webkit-transform: rotate(10deg);
+                transform: rotate(10deg)
+            }
+            66.6% {
+                -webkit-transform: rotate(-8deg);
+                transform: rotate(-8deg)
+            }
+            83.25% {
+                -webkit-transform: rotate(5deg);
+                transform: rotate(5deg)
+            }
+            to {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+        }
+        @media  only screen and (max-width: 900px) {
+            .categoriesImages {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="categoriesImages">
+            <div class="item item-product" style="width: 240px;">
+                <div class="item-product-cat-content">
+                   <a href="" >
+                      <div class="item-image">
+                         <img   alt="bath-body" src="./img/cate-5.jpg.webp" >
+                      </div>
+                   </a>
+                   <h2 class="item-title">
+                      <a href="" >Bath &amp; Body</a>
+                   </h2>
+                </div>
+             </div>
+             <div class="item item-product" style="width: 240px;">
+                <div class="item-product-cat-content">
+                   <a href="" >
+                      <div class="item-image">
+                         <img alt="bath-body" src="./img/cate-5.jpg.webp" >
+                      </div>
+                   </a>
+                   <h2 class="item-title">
+                      <a href="" >Bath &amp; Body</a>
+                   </h2>
+                </div>
+             </div>
+             
+        </div>
+    </div>
+</body>
+</html>
